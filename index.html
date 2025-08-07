@@ -7,6 +7,9 @@
     <title>Landing Page Template</title>
 </head>
 <body>
+
+    <!--** Header Topbar Navigation **-->
+
     <header class="topbar">
         <img class="logo" src="./images/logo.png" alt="Logo de la Empresa" />
         <nav>
@@ -16,42 +19,77 @@
                 <li class="nav-item"><a href="#">Modelo 3</a></li>
             </ul>
         </nav>
-        <button class="topbar-cta"><a href="#">Botón CTA</a></button>
+        <button class="btn-cta primary"><a href="#">Botón CTA</a></button>
     </header>
 
+    <!--** Hero Section **-->
+
     <main class="hero-section">
-        <div class="hero-bg"></div>
+        <div class="hero-bg">
+            <img class="hero-img" src="./images/hero_bg.webp" alt="hero image" >            
+        </div>
         <div class="hero-content">
             <h1 class="hero-title">Bienvenido a Nuestro Sitio Web</h1>
             <p class="hero-description">Explora nuestros modelos y descubre lo que tenemos para ofrecer
-            <div class="hero-buttons-container">
-                <button class="hero-button primary">
-                   <a href="">Click Here</a>
-                   <svg fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M5.975 17.504l14.287.001-6.367 6.366L16.021 26l10.004-10.003L16.029 6l-2.128 2.129 6.367 6.366H5.977z"></path></g></svg>
-                </button>
-                <button class="hero-button secondary">
+            <div class="hero-btn-wrapper">
+                <button class="btn-cta secondary">
                     <a href="">Click Here</a>
                     <svg viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>info</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="add" fill="currentColor" transform="translate(42.666667, 42.666667)"> <path d="M213.333333,3.55271368e-14 C95.51296,3.55271368e-14 3.55271368e-14,95.51168 3.55271368e-14,213.333333 C3.55271368e-14,331.153707 95.51296,426.666667 213.333333,426.666667 C331.154987,426.666667 426.666667,331.153707 426.666667,213.333333 C426.666667,95.51168 331.154987,3.55271368e-14 213.333333,3.55271368e-14 Z M213.333333,384 C119.227947,384 42.6666667,307.43872 42.6666667,213.333333 C42.6666667,119.227947 119.227947,42.6666667 213.333333,42.6666667 C307.44,42.6666667 384,119.227947 384,213.333333 C384,307.43872 307.44,384 213.333333,384 Z M240.04672,128 C240.04672,143.46752 228.785067,154.666667 213.55008,154.666667 C197.698773,154.666667 186.713387,143.46752 186.713387,127.704107 C186.713387,112.5536 197.99616,101.333333 213.55008,101.333333 C228.785067,101.333333 240.04672,112.5536 240.04672,128 Z M192.04672,192 L234.713387,192 L234.713387,320 L192.04672,320 L192.04672,192 Z" id="Shape"> </path> </g> </g> </g></svg>
+                </button>
+                <button class="btn-cta primary">
+                    <a href="">Click Here</a>
+                    <svg fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M5.975 17.504l14.287.001-6.367 6.366L16.021 26l10.004-10.003L16.029 6l-2.128 2.129 6.367 6.366H5.977z"></path></g></svg>
+                </button>
             </div>
         </div>
-        <div class="hero-img">
-            <img src="./images/hero_img.svg" alt="hero image" >
+
+
+    <!--** Counters Boxes **-->
+
+        <div class="counters-wrapper">
+            <div class="counter-item">
+                <div class="counter" num="100">0</div>
+                <p class="counter-description">Clientes</p>
+            </div>
+            <div class="counter-item">
+                <div class="counter" num="100">0</div>
+                <p class="counter-description">Clientes</p>
+            </div>
+            <div class="counter-item">
+                <div class="counter" num="100">0</div>
+                <p class="counter-description">Clientes</p>
+            </div>
         </div>
     </main>
+
+    
+    <!--** Slideshow Section **-->
+     
     <div class="marquee">
         <div class="marquee-content">
             <div class="marquee-item" style="--position:1"><img src="" alt="clinte 1"></div> 
             <div class="marquee-item" style="--position:2"><img src="" alt="clinte 2"></div>
             <div class="marquee-item" style="--position:3"><img src="" alt="clinte 3"></div>
-            <div class="marquee-item" style="--position:4"><img src="" alt="clinte 4"></div>
+            <div class="marquee-item" style="--position:4"><img src="" alt="clinte 4"></div> 
             <div class="marquee-item" style="--position:5"><img src="" alt="clinte 5"></div>
             <div class="marquee-item" style="--position:6"><img src="" alt="clinte 6"></div>
             <div class="marquee-item" style="--position:7"><img src="" alt="clinte 7"></div>
             <div class="marquee-item" style="--position:8"><img src="" alt="clinte 8"></div>
         </div>
-
     </div>
+    <!--** About Section **-->
+    <!-- 
 
+    <section class="about-section">
+        <div class="about-content">
+            <h2 class="about-title">Sobre Nosotros</h2>
+            <p class="about-description">Somos una empresa dedicada a ofrecer los mejores productos y servicios para nuestros clientes. Nuestro compromiso es la calidad y la satisfacción del cliente.</p>
+            <button class="about-button primary"><a href="#">Por qué elegirnos</a></button>
+        </div>
+        <div class="about-img">
+            <img src="./images/about_img.svg" alt="About Us Image">
+        </div>
+    -->
     <script src="/script.js"></script>
 </body>
 </html>
