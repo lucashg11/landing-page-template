@@ -1,95 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
     <title>Landing Page Template</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <!--** Header Topbar Navigation **-->
 
     <header class="topbar">
+      <div class="wrapper">
         <img class="logo" src="./images/logo.png" alt="Logo de la Empresa" />
         <nav>
-            <ul class="nav-links"> 
-                <li class="nav-item"><a href="#">Modelo 1</a></li>
-                <li class="nav-item"><a href="#">Modelo 2</a></li>
-                <li class="nav-item"><a href="#">Modelo 3</a></li>
-            </ul>
+          <ul class="nav-links">
+            <li class="nav-item"><a href="#">inicio</a></li>
+            <li class="nav-item"><a href="#services">servicios</a></li>
+            <li class="nav-item"><a href="#about">nosotros</a></li>
+            <li class="nav-item"><a href="#contact">contacto</a></li>
+          </ul>
         </nav>
-        <button class="btn-cta primary"><a href="#">Botón CTA</a></button>
+        <button class="btn-cta primary">
+          <a href="#contact">Botón CTA</a>
+        </button>
+      </div>
     </header>
-
     <!--** Hero Section **-->
 
     <main class="hero-section">
-        <div class="hero-bg">
-            <img class="hero-img" src="./images/hero_bg.webp" alt="hero image" >            
+      <div class="hero-bg"></div>
+      <div class="hero-content" data-aos="zoom-in" data-aos-duration="1000">
+        <h1 class="hero-title">Bienvenido a Nuestro Sitio Web</h1>
+        <p class="hero-description">
+          Explora nuestros modelos y descubre lo que tenemos para ofrecer
+        </p>
+        <div class="hero-btn-wrapper">
+          <button class="btn-cta primary">
+            <a href="#contact">Click Aca</a>
+            <i class="arrow-right"></i>
+          </button>
+          <button class="btn-cta secondary">
+            <a href="#about">Click Aca</a>
+            <i class="info-icon"></i>
+          </button>
         </div>
-        <div class="hero-content">
-            <h1 class="hero-title">Bienvenido a Nuestro Sitio Web</h1>
-            <p class="hero-description">Explora nuestros modelos y descubre lo que tenemos para ofrecer
-            <div class="hero-btn-wrapper">
-                <button class="btn-cta secondary">
-                    <a href="">Click Here</a>
-                    <svg viewBox="0 0 512 512" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="currentColor"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>info</title> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="add" fill="currentColor" transform="translate(42.666667, 42.666667)"> <path d="M213.333333,3.55271368e-14 C95.51296,3.55271368e-14 3.55271368e-14,95.51168 3.55271368e-14,213.333333 C3.55271368e-14,331.153707 95.51296,426.666667 213.333333,426.666667 C331.154987,426.666667 426.666667,331.153707 426.666667,213.333333 C426.666667,95.51168 331.154987,3.55271368e-14 213.333333,3.55271368e-14 Z M213.333333,384 C119.227947,384 42.6666667,307.43872 42.6666667,213.333333 C42.6666667,119.227947 119.227947,42.6666667 213.333333,42.6666667 C307.44,42.6666667 384,119.227947 384,213.333333 C384,307.43872 307.44,384 213.333333,384 Z M240.04672,128 C240.04672,143.46752 228.785067,154.666667 213.55008,154.666667 C197.698773,154.666667 186.713387,143.46752 186.713387,127.704107 C186.713387,112.5536 197.99616,101.333333 213.55008,101.333333 C228.785067,101.333333 240.04672,112.5536 240.04672,128 Z M192.04672,192 L234.713387,192 L234.713387,320 L192.04672,320 L192.04672,192 Z" id="Shape"> </path> </g> </g> </g></svg>
-                </button>
-                <button class="btn-cta primary">
-                    <a href="">Click Here</a>
-                    <svg fill="currentColor" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M5.975 17.504l14.287.001-6.367 6.366L16.021 26l10.004-10.003L16.029 6l-2.128 2.129 6.367 6.366H5.977z"></path></g></svg>
-                </button>
-            </div>
+      </div>
+
+      <!--** Counters Boxes **-->
+
+      <div class="counters-wrapper">
+        <div class="counter-item">
+          <div class="counter" num="100">0</div>
+          <p class="counter-description">+ Clientes</p>
         </div>
-
-
-    <!--** Counters Boxes **-->
-
-        <div class="counters-wrapper">
-            <div class="counter-item">
-                <div class="counter" num="100">0</div>
-                <p class="counter-description">Clientes</p>
-            </div>
-            <div class="counter-item">
-                <div class="counter" num="100">0</div>
-                <p class="counter-description">Clientes</p>
-            </div>
-            <div class="counter-item">
-                <div class="counter" num="100">0</div>
-                <p class="counter-description">Clientes</p>
-            </div>
+        <div class="counter-item">
+          <div class="counter" num="50">0</div>
+          <p class="counter-description">+ Años</p>
         </div>
+        <div class="counter-item">
+          <div class="counter" num="400">0</div>
+          <p class="counter-description">+ Proyectos</p>
+        </div>
+      </div>
     </main>
 
-    
-    <!--** Slideshow Section **-->
-     
-    <div class="marquee">
-        <div class="marquee-content">
-            <div class="marquee-item" style="--position:1"><img src="" alt="clinte 1"></div> 
-            <div class="marquee-item" style="--position:2"><img src="" alt="clinte 2"></div>
-            <div class="marquee-item" style="--position:3"><img src="" alt="clinte 3"></div>
-            <div class="marquee-item" style="--position:4"><img src="" alt="clinte 4"></div> 
-            <div class="marquee-item" style="--position:5"><img src="" alt="clinte 5"></div>
-            <div class="marquee-item" style="--position:6"><img src="" alt="clinte 6"></div>
-            <div class="marquee-item" style="--position:7"><img src="" alt="clinte 7"></div>
-            <div class="marquee-item" style="--position:8"><img src="" alt="clinte 8"></div>
-        </div>
-    </div>
     <!--** About Section **-->
-    <!-- 
 
-    <section class="about-section">
-        <div class="about-content">
-            <h2 class="about-title">Sobre Nosotros</h2>
-            <p class="about-description">Somos una empresa dedicada a ofrecer los mejores productos y servicios para nuestros clientes. Nuestro compromiso es la calidad y la satisfacción del cliente.</p>
-            <button class="about-button primary"><a href="#">Por qué elegirnos</a></button>
+    <section id="about" class="about-section">
+      <div class="about-content" data-aos="zoom-in-up" data-aos-offset="100">
+        <h2 class="about-title">Sobre Nosotros</h2>
+        <p class="about-description">
+          Somos una empresa dedicada a ofrecer los mejores productos y servicios
+          para nuestros clientes. Nuestro compromiso es la calidad y la
+          satisfacción del cliente.
+        </p>
+      </div>
+      <div
+        class="about-img"
+        data-aos="zoom-in-up"
+        data-aos-offset="100"
+        data-aos-delay="500"
+      >
+        <img src="./images/about_img.svg" alt="About Us Image" />
+      </div>
+    </section>
+
+    <!--** Slideshow Section **-->
+
+    <div class="marquee">
+      <div class="marquee-content">
+        <div class="marquee-item" style="--position: 1">
+          <img src="" alt="clinte 1" />
         </div>
-        <div class="about-img">
-            <img src="./images/about_img.svg" alt="About Us Image">
+        <div class="marquee-item" style="--position: 2">
+          <img src="" alt="clinte 2" />
         </div>
-    -->
+        <div class="marquee-item" style="--position: 3">
+          <img src="" alt="clinte 3" />
+        </div>
+        <div class="marquee-item" style="--position: 4">
+          <img src="" alt="clinte 4" />
+        </div>
+        <div class="marquee-item" style="--position: 5">
+          <img src="" alt="clinte 5" />
+        </div>
+        <div class="marquee-item" style="--position: 6">
+          <img src="" alt="clinte 6" />
+        </div>
+        <div class="marquee-item" style="--position: 7">
+          <img src="" alt="clinte 7" />
+        </div>
+        <div class="marquee-item" style="--position: 8">
+          <img src="" alt="clinte 8" />
+        </div>
+      </div>
+    </div>
+
+    <!--** Features Section **-->
+    <section id="services" class="features-section">
+      <div class="features-content" data-aos="zoom-in-up" data-aos-offset="100">
+        <h2 class="features-title">Nuestros Servicios</h2>
+        <p class="features-description">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid,
+          dolorum debitis? Quas dolor doloremque error perspiciatis ratione
+          inventore at. Minus consequatur dicta rem recusandae et.
+        </p>
+        <button class="btn-cta primary">
+          <a href="#contact">Botón CTA</a>
+        </button>
+      </div>
+      <section
+        class="features-wrapper"
+        data-aos="fade-up"
+        data-aos-offset="100"
+        data-aos-delay="500"
+      >
+        <div class="features-item">
+          <i class="service-icon"></i>
+          <h3 class="features-item-title">Servicio 1</h3>
+          <p class="features-item-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+            tenetur iste velit beatae ipsam ab?
+          </p>
+        </div>
+        <div class="features-item">
+          <i class="service-icon"></i>
+          <h3 class="features-item-title">Servicio 2</h3>
+          <p class="features-item-description">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo
+            consectetur nesciunt illum quas natus ipsam!
+          </p>
+        </div>
+        <div class="features-item">
+          <i class="service-icon"></i>
+          <h3 class="features-item-title">Servicio 3</h3>
+          <p class="features-item-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis
+            fuga rem expedita sit repudiandae earum.
+          </p>
+        </div>
+        <div class="features-item">
+          <i class="service-icon"></i>
+          <h3 class="features-item-title">Servicio 4</h3>
+          <p class="features-item-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae quo
+            iusto itaque aliquid maiores dolorem!
+          </p>
+        </div>
+        <div class="features-item">
+          <i class="service-icon"></i>
+          <h3 class="features-item-title">Servicio 5</h3>
+          <p class="features-item-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi nam
+            cumque quam eos quis impedit.
+          </p>
+        </div>
+        <div class="features-item">
+          <i class="service-icon"></i>
+          <h3 class="features-item-title">Servicio 6</h3>
+          <p class="features-item-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias
+            et, praesentium ullam cum earum magnam.
+          </p>
+        </div>
+      </section>
+      <article
+        class="qualities-wrapper"
+        data-aos="fade-up"
+        data-aos-offset="100"
+        data-aos-delay="300"
+      >
+        <div class="qualities-content">
+          <h2 class="qualities-title">Nuestras Cualidades</h2>
+          <p class="qualities-description">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate,
+            optio.
+          </p>
+        </div>
+        <div
+          class="qualities-boxes"
+          data-aos="fade-up"
+          data-aos-offset="100"
+          data-aos-delay="500"
+        >
+          <div class="quality-box">
+            <i class="security-icon"></i>
+            <h3 class="quality-box-title">Cualidad 1</h3>
+            <p class="quality-box-description">Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="quality-box">
+            <i class="security-icon"></i>
+            <h3 class="quality-box-title">Cualidad 1</h3>
+            <p class="quality-box-description">Lorem ipsum dolor sit amet.</p>
+          </div>
+          <div class="quality-box">
+            <i class="security-icon"></i>
+            <h3 class="quality-box-title">Cualidad 1</h3>
+            <p class="quality-box-description">Lorem ipsum dolor sit amet.</p>
+          </div>
+        </div>
+      </article>
+    </section>
+
+    <!--** Contact Section  **-->
+    <section id="contact" class="contact-section">
+      <h2 class="contact-title">Ponete en Contacto</h2>
+      <div class="contact-wrapper">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d26428.49748344151!2d-59.06238193890144!3d-34.10635464659569!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bb0b6a92357b4d%3A0x5f7d9ac7c145085d!2sZ%C3%A1rate%2C%20Provincia%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1756491807979!5m2!1ses-419!2sar"
+          width="100%"
+          height="100%"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+        ></iframe>
+        <div class="contact-info-wrapper">
+          <div class="contact-info">
+            <div class="contact-info-box">
+              <i class="location-icon"></i>
+              <p class="contact-info-description">zarate</p>
+            </div>
+            <div class="contact-info-box">
+              <i class="phone-icon"></i>
+              <p class="contact-info-description">3487-12345678</p>
+            </div>
+            <div class="contact-info-box">
+              <i class="mail-icon"></i>
+              <p class="contact-info-description">test@test.com</p>
+            </div>
+          </div>
+          <form action="#" method="post">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Nombre"
+              required
+            />
+            <input
+              type="mail"
+              id="mail"
+              name="mail"
+              placeholder="Email"
+              required
+            />
+            <textarea
+              id="message"
+              name="textarea"
+              rows="10"
+              cols="30"
+              placeholder="Como podemos ayudarte"
+            ></textarea>
+            <button class="btn-cta primary btn-form">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
     <script src="/script.js"></script>
-</body>
+  </body>
 </html>
