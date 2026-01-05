@@ -7,11 +7,45 @@ import '../styles/global.css';
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		
-		<title>Astro Basics</title>
+		<!-- SEO Meta Tags -->
+		<title>Astro Landing Template - Modern Web Development</title>
+		<meta name="description" content="Professional landing page template built with Astro and Tailwind CSS. Fast, responsive, and SEO-optimized for modern web applications." />
+		<meta name="keywords" content="Astro, Tailwind CSS, landing page, web development, template, responsive" />
+		<meta name="author" content="Lucas Gomez" />
+		<link rel="canonical" href={Astro.url} />
+		
+		<!-- Open Graph Tags -->
+		<meta property="og:title" content="Astro Landing Template - Modern Web Development" />
+		<meta property="og:description" content="Professional landing page template built with Astro and Tailwind CSS. Fast, responsive, and SEO-optimized." />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:image" content="/og-image.jpg" />
+		<meta property="og:site_name" content="Astro Landing Template" />
+		
+		<!-- Twitter Card Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content="Astro Landing Template - Modern Web Development" />
+		<meta name="twitter:description" content="Professional landing page template built with Astro and Tailwind CSS." />
+		<meta name="twitter:image" content="/twitter-image.jpg" />
+		
+		<!-- Structured Data -->
+		<script type="application/ld+json">
+		{
+			"@context": "https://schema.org",
+			"@type": "WebPage",
+			"name": "Astro Landing Template",
+			"description": "Professional landing page template built with Astro and Tailwind CSS",
+			"url": {Astro.url},
+			"author": {
+				"@type": "Person",
+				"name": "Lucas Gomez"
+			}
+		}
+		</script>
 	</head>
 	<body>
 		<main>

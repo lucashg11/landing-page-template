@@ -1,6 +1,143 @@
 ---
-
+import { Icon } from "astro-icon/components";
 ---
-<footer>
-    esto es el footer
+
+<footer class="w-full bg-[#1a1a1a] text-white py-12 px-4">
+    <div class="w-full max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-4 gap-8 mb-8">
+            <!-- Company Info -->
+            <div class="space-y-4">
+                <div class="flex items-center gap-2">
+                    <Icon name="mdi:dev-to" size={32} color="white" />
+                    <span class="text-xl font-bold">Astro Landing</span>
+                </div>
+                <p class="text-white/60 text-sm">
+                    Professional landing page templates built with modern web
+                    technologies for optimal performance and user experience.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h3 class="font-semibold mb-4">Quick Links</h3>
+                <ul class="space-y-2 text-white/60 text-sm">
+                    <li>
+                        <a
+                            href="#home"
+                            class="hover:text-white transition-colors duration-300"
+                            >Home</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#about"
+                            class="hover:text-white transition-colors duration-300"
+                            >About</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#team"
+                            class="hover:text-white transition-colors duration-300"
+                            >Team</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#contact"
+                            class="hover:text-white transition-colors duration-300"
+                            >Contact</a
+                        >
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h3 class="font-semibold mb-4">Services</h3>
+                <ul class="space-y-2 text-white/60 text-sm">
+                    <li>
+                        <a
+                            href="#"
+                            class="hover:text-white transition-colors duration-300"
+                            >Web Design</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            class="hover:text-white transition-colors duration-300"
+                            >SEO Optimization</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            class="hover:text-white transition-colors duration-300"
+                            >Development</a
+                        >
+                    </li>
+                    <li>
+                        <a
+                            href="#"
+                            class="hover:text-white transition-colors duration-300"
+                            >Consulting</a
+                        >
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Social Links -->
+            <div>
+                <h3 class="font-semibold mb-4">Connect With Us</h3>
+                <div class="flex gap-3 mb-4">
+                    <a
+                        href="https://twitter.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
+                    >
+                        <Icon size={20} color="white" name="mdi:twitter" />
+                    </a>
+                    <a
+                        href="https://linkedin.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
+                    >
+                        <Icon size={20} color="white" name="mdi:linkedin" />
+                    </a>
+                    <a
+                        href="https://github.com"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
+                    >
+                        <Icon size={20} color="white" name="mdi:github" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div
+            class="border-t border-white/20 pt-8 flex flex-col md:flex-row justify-between items-center gap-4"
+        >
+            <p class="text-white/60 text-sm">
+                © 2026 Astro Landing Template. All rights reserved.
+            </p>
+            <div class="flex gap-6 text-white/60 text-sm">
+                <a
+                    href="#"
+                    class="hover:text-white transition-colors duration-300"
+                    >Privacy Policy</a
+                >
+                <a
+                    href="#"
+                    class="hover:text-white transition-colors duration-300"
+                    >Terms of Service</a
+                >
+            </div>
+        </div>
+    </div>
 </footer>

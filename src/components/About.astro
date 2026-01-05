@@ -1,31 +1,67 @@
+---
+// Define reusable stats data
+const stats = [
+    {
+        value: "500+",
+        label: "Companies Satisfied",
+    },
+    {
+        value: "100%",
+        label: "Personal Attention",
+    },
+    {
+        value: "24/7",
+        label: "Technical Support",
+    },
+    {
+        value: "10+",
+        label: "Years of Experience",
+    },
+];
+---
 
-<article class="w-full px-4 pt-24">
+<article class="w-full px-4 pt-24 md:px-12 bg-gray-50 lg:px-24">
     <div class="w-full flex flex-col items-center justify-center gap-8">
         <section class="w-full text-[#00808D] text-center">
-            <h2 class="text-3xl font-bold mb-2">First Section</h2>
-            <p class="text-[#1a1a1a]/60">This is the first section on this page. Here you will find crucial information of the website.</p>
+            <h2 class="text-3xl font-bold mb-2">Our Achievements</h2>
+            <p class="text-[#1a1a1a]/60">
+                This section showcases our success metrics and commitment to
+                excellence.
+            </p>
         </section>
-        <section class="w-full h-56 border rounded-xl mb-4">
-            <video class="w-full h-full object-cover" src="" controls muted></video>
-        </section>
-        <div class="w-full flex items-center justify-center gap-6 flex-wrap">
-            <div class="w-[166px] h-28 shadow-xl rounded-xl flex flex-col items-center justify-center text-center p-4">
-                <span class="text-2xl text-[#00808D] font-bold">500+</span>
-                <p class="text-[#1a1a1a]/80 text-lg">Companies Satisfied</p>
+        <div
+            class="w-full flex flex-col gap-8 lg:flex-row-reverse lg:items-center lg:justify-center"
+        >
+            <section
+                class="w-full h-56 border rounded-xl mb-4 overflow-hidden md:max-w-2xl md:h-96"
+            >
+                <video
+                    class="w-full h-full object-cover"
+                    src="/demo-video.mp4"
+                    controls
+                    muted
+                    autoplay
+                    loop
+                >
+                    Your browser does not support the video tag.
+                </video>
+            </section>
+            <div
+                class="w-full flex items-center justify-center gap-6 flex-wrap md:justify-evenly"
+            >
+                {
+                    stats.map((stat) => (
+                        <div class="w-41.5 h-28  rounded-xl flex flex-col items-center border border-gray-400/30 text-center p-4 hover:shadow-3xl transition-shadow duration-300 md:w-2xs lg:w-56 lg:h-44 lg:flex-row">
+                            <span class="text-2xl text-[#00808D] font-bold lg:text-3xl">
+                                {stat.value}
+                            </span>
+                            <p class="text-[#1a1a1a]/80 text-lg">
+                                {stat.label}
+                            </p>
+                        </div>
+                    ))
+                }
             </div>
-            <div class="w-[166px] h-28 shadow-xl rounded-xl flex flex-col items-center justify-center text-center p-4">
-                <span class="text-2xl text-[#00808D] font-bold ">100%</span>
-                <p class="text-[#1a1a1a]/80 text-lg">Personal Attention</p>
-            </div>
-            <div class="w-[166px] h-28 shadow-xl rounded-xl flex flex-col items-center justify-center text-center p-4">
-                <span class="text-2xl text-[#00808D] font-bold ">24/7</span>
-                <p class="text-[#1a1a1a]/80 text-lg">Technical Support</p>
-            </div>
-            <div class="w-[166px] h-28 shadow-xl rounded-xl flex flex-col items-center justify-center text-center p-4">
-                <span class="text-2xl text-[#00808D] font-bold ">10+</span>
-                <p class="text-[#1a1a1a]/80 text-lg">Years of Experience</p>
-            </div>
-
         </div>
     </div>
 </article>

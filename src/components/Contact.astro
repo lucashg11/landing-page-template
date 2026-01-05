@@ -1,6 +1,114 @@
 ---
-
+import { Icon } from "astro-icon/components";
 ---
-<section>
-    esto es el contact
+
+<section class="w-full px-4 py-24 md:px-12">
+    <div class="w-full max-w-4xl mx-auto">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl text-[#00808D] font-bold mb-4">Get In Touch</h2>
+            <p class="text-[#1a1a1a]/60 text-lg">
+                Ready to start your next project? We'd love to hear from you.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-1 gap-8 lg:grid-cols-2">
+            <!-- Contact Form -->
+            <form class="space-y-4 bg-white p-6 rounded-xl shadow-lg">
+                <div>
+                    <label
+                        for="name"
+                        class="block text-sm font-medium text-[#1a1a1a] mb-1"
+                        >Name</label
+                    >
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        required
+                        class="w-full px-4 py-2 border border-[#1a1a1a]/30 rounded-lg focus:ring-2 focus:ring-[#00808D] focus:border-transparent outline-none transition-all duration-300"
+                        placeholder="Your Name"
+                    />
+                </div>
+                <div>
+                    <label
+                        for="email"
+                        class="block text-sm font-medium text-[#1a1a1a] mb-1"
+                        >Email</label
+                    >
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        required
+                        class="w-full px-4 py-2 border border-[#1a1a1a]/30 rounded-lg focus:ring-2 focus:ring-[#00808D] focus:border-transparent outline-none transition-all duration-300"
+                        placeholder="your@email.com"
+                    />
+                </div>
+                <div>
+                    <label
+                        for="message"
+                        class="block text-sm font-medium text-[#1a1a1a] mb-1"
+                        >Message</label
+                    >
+                    <textarea
+                        id="message"
+                        name="message"
+                        rows="4"
+                        required
+                        class="w-full px-4 py-2 border border-[#1a1a1a]/30 rounded-lg focus:ring-2 focus:ring-[#00808D] focus:border-transparent outline-none transition-all duration-300 resize-none"
+                        placeholder="Tell us about your project..."></textarea>
+                </div>
+                <button
+                    type="submit"
+                    class="w-full bg-[#4D1780] text-white font-semibold py-3 rounded-lg hover:bg-[#5a2090] transition-colors duration-300 flex items-center justify-center gap-4"
+                >
+                    <span>Send Message</span>
+                    <Icon
+                        class={"-rotate-45 -translate-y-1"}
+                        name="mdi:send"
+                        size={24}
+                        color="#fff"
+                    />
+                </button>
+            </form>
+
+            <!-- Contact Info -->
+            <div class="space-y-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center gap-3 mb-3">
+                        <Icon size={24} color="#00808D" name="mdi:email" />
+                        <h3 class="font-semibold text-[#1a1a1a]">Email</h3>
+                    </div>
+                    <p class="text-[#1a1a1a]/60">hello@astrolanding.com</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center gap-3 mb-3">
+                        <Icon size={24} color="#00808D" name="mdi:phone" />
+                        <h3 class="font-semibold text-[#1a1a1a]">Phone</h3>
+                    </div>
+                    <p class="text-[#1a1a1a]/60">+1 (555) 123-4567</p>
+                </div>
+
+                <div class="bg-white p-6 rounded-xl shadow-lg">
+                    <div class="flex items-center gap-3 mb-3">
+                        <Icon size={24} color="#00808D" name="mdi:map-marker" />
+                        <h3 class="font-semibold text-[#1a1a1a]">Location</h3>
+                    </div>
+                    <p class="text-[#1a1a1a]/60">
+                        San Francisco, CA<br />United States
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
+
+<script>
+    document.querySelector("form")?.addEventListener("submit", (e) => {
+        e.preventDefault();
+        // Add form submission logic here
+        alert("Thank you for your message! We will get back to you soon.");
+        e.target.reset();
+    });
+</script>

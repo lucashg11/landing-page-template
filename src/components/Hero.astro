@@ -1,50 +1,82 @@
 ---
-import { Icon } from 'astro-icon/components';
+import { Icon } from "astro-icon/components";
+// Define reusable service card data
+const services = [
+    {
+        icon: "mdi:sticker-check",
+        title: "Web Design",
+        description: "Custom, responsive designs",
+    },
+    {
+        icon: "mdi:scale-balance",
+        title: "SEO Oriented",
+        description: "Improve search engine for visibility",
+    },
+    {
+        icon: "mdi:check-circle",
+        title: "Quality Check",
+        description: "Thorough testing to ensure performance",
+    },
+    {
+        icon: "mdi:shield",
+        title: "Security First",
+        description: "Robust security data protection",
+    },
+];
 ---
-<section class="w-full bg-linear-to-b from-[#00808D] to-[#1a1a1a] pt-16 px-4 polygon flex items-center justify-end">
-    <div class="w-full flex flex-col items-center justify-center gap-8 ">
-        <div class="w-full max-w-4xl text-center">
-            <h1 class="text-5xl font-bold text-white mb-2">Astro Landing Template</h1>
-            <p class="text-white/60 text-lg mb-4">Landing page example made in Astro and Tailwind CSS</p>
-            <button class="bg-[#4D1780] px-5 py-2 rounded-xl text-white font-semibold md:hover:scale-110 transition-all duration-300">Learn More</button>
+
+<section
+    class="w-full bg-linear-to-b from-[#00808D] to-[#1a1a1a] pt-16 px-4 polygon flex items-center justify-end lg:h-[93dvh] lg:px-24"
+>
+    <div
+        class="w-full flex flex-col items-center justify-center gap-8 lg:flex-row"
+    >
+        <div class="w-full max-w-4xl text-center lg:text-left">
+            <h1 class="text-5xl font-bold text-white mb-2">
+                Astro Landing Template
+            </h1>
+            <p class="text-white/60 text-lg mb-4">
+                Landing page example made in Astro and Tailwind CSS
+            </p>
+            <button
+                class="bg-[#4D1780] px-5 py-2 rounded-xl text-white font-semibold md:hover:scale-110 transition-all duration-300"
+                >Learn More</button
+            >
         </div>
-        <div class="w-full h-full flex items-center justify-between flex-wrap gap-4">
-            <div class="w-[166px] h-28 flex flex-col items-start justify-center border-2 border-white/30 rounded-xl p-2 bg-[#4D1780]/30 gap-1">
-                <Icon size={28} name="mdi:sticker-check" color="white"/>
-                <h3 class="text-white text-lg">Service</h3>
-                <p class="text-white/60">Service description</p>
-            </div>
-            <div class="w-[166px] h-28 flex flex-col items-start justify-center border-2 border-white/30 rounded-xl p-2 bg-[#4D1780]/30 gap-1">
-                <Icon size={28} name="mdi:scale-balance" color="white"/>
-                <h3 class="text-white text-lg">Service</h3>
-                <p class="text-white/60">Service description</p>
-            </div>
-            <div class="w-[166px] h-28 flex flex-col items-start justify-center border-2 border-white/30 rounded-xl p-2 bg-[#4D1780]/30 gap-1">
-                <Icon size={28} name="mdi:check-circle" color="white"/>
-                <h3 class="text-white text-lg">Service</h3>
-                <p class="text-white/60">Service description</p>
-            </div>
-            <div class="w-[166px] h-28 flex flex-col items-start justify-center border-2 border-white/30 rounded-xl p-2 bg-[#4D1780]/30 gap-1">
-                <Icon size={28} name="mdi:shield" color="white"/>
-                <h3 class="text-white text-lg">Service</h3>
-                <p class="text-white/60">Service description</p>
-            </div>
+        <div
+            class="w-full h-full flex items-center justify-between flex-wrap gap-4 md:max-w-2xl md:justify-evenly lg:flex-row lg:max-w-lg"
+        >
+            {
+                services.map((service) => (
+                    <div class="w-41.5 h-28 flex flex-col items-start justify-center border-2 border-white/30 rounded-xl p-2 bg-[#4D1780]/30 gap-1 md:w-2xs lg:w-60">
+                        <div class="flex items-start gap-2 md:flex-col md:gap-2">
+                            <Icon size={28} name={service.icon} color="white" />
+                            <h3 class="text-white text-md">{service.title}</h3>
+                        </div>
+                        <p class="text-white/60 text-xs">
+                            {service.description}
+                        </p>
+                    </div>
+                ))
+            }
         </div>
-        <div id="scroll-indicator" class="flex items-center flex-col gap-2 duration-300">
-            <Icon size={24} name="mdi:cellphone-arrow-down" color={"white"}/>
-            <Icon class="animate-bounce duration-300" size={16} name="mdi:triangle-down" color={"white"}/>
+        <div
+            id="scroll-indicator"
+            class="flex items-center flex-col gap-2 animate-bounce duration-300 md:opacity-0 md:invisible"
+        >
+            <Icon size={24} name="mdi:cellphone-arrow-down" color={"white"} />
+            <Icon size={16} name="mdi:triangle-down" color={"white"} />
         </div>
     </div>
 </section>
 
 <script>
-    const scrollIndicator = document.getElementById('scroll-indicator');
-    window.addEventListener('scroll', () => {
+    const scrollIndicator = document.getElementById("scroll-indicator");
+    window.addEventListener("scroll", () => {
         if (window.scrollY > 200) {
-            scrollIndicator?.classList.add('opacity-0');
+            scrollIndicator?.classList.add("opacity-0");
         } else {
-            scrollIndicator?.classList.remove('opacity-0');
+            scrollIndicator?.classList.remove("opacity-0");
         }
-
-    })
+    });
 </script>
