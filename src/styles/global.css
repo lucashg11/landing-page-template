@@ -34,6 +34,18 @@
   html {
     scroll-behavior: smooth;
   }
+
+  /* Scroll Reveal Animation */
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+  }
+
+  .reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+  }
   
   /* Custom focus styles */
   .focus-ring {
