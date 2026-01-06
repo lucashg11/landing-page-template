@@ -9,16 +9,16 @@ const quickLinks = [
 ];
 
 const services = [
-    { name: "Web Design", href: "#" },
-    { name: "SEO Optimization", href: "#" },
-    { name: "Development", href: "#" },
-    { name: "Consulting", href: "#" },
+    { name: "Web Design", href: "#web-design" },
+    { name: "SEO Optimization", href: "#seo-optimization" },
+    { name: "Development", href: "#development" },
+    { name: "Consulting", href: "#consulting" },
 ];
 
 const socialLinks = [
-    { icon: "mdi:twitter", href: "https://twitter.com" },
-    { icon: "mdi:linkedin", href: "https://linkedin.com" },
-    { icon: "mdi:github", href: "https://github.com" },
+    { icon: "mdi:twitter", href: "https://twitter.com", ariaLabel: "Twitter" },
+    { icon: "mdi:linkedin", href: "https://linkedin.com", ariaLabel: "LinkedIn" },
+    { icon: "mdi:github", href: "https://github.com", ariaLabel: "GitHub" },
 ];
 ---
 
@@ -83,6 +83,7 @@ const socialLinks = [
                         socialLinks.map((social) => (
                             <a
                                 href={social.href}
+                                aria-label={social.ariaLabel}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
@@ -104,12 +105,12 @@ const socialLinks = [
             </p>
             <div class="flex gap-6 text-white/60 text-sm">
                 <a
-                    href="#"
+                    href="#privacy-policy"
                     class="hover:text-white transition-colors duration-300"
                     >Privacy Policy</a
                 >
                 <a
-                    href="#"
+                    href="#terms-of-service"
                     class="hover:text-white transition-colors duration-300"
                     >Terms of Service</a
                 >
