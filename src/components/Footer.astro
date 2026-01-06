@@ -1,8 +1,28 @@
 ---
 import { Icon } from "astro-icon/components";
+
+const quickLinks = [
+    { name: "Home", href: "#home" },
+    { name: "About", href: "#about" },
+    { name: "Team", href: "#team" },
+    { name: "Contact", href: "#contact" },
+];
+
+const services = [
+    { name: "Web Design", href: "#" },
+    { name: "SEO Optimization", href: "#" },
+    { name: "Development", href: "#" },
+    { name: "Consulting", href: "#" },
+];
+
+const socialLinks = [
+    { icon: "mdi:twitter", href: "https://twitter.com" },
+    { icon: "mdi:linkedin", href: "https://linkedin.com" },
+    { icon: "mdi:github", href: "https://github.com" },
+];
 ---
 
-<footer class="w-full bg-[#1a1a1a] text-white py-12 px-4">
+<footer class="w-full bg-(--color-dark) text-white py-12 px-4">
     <div class="w-full max-w-6xl mx-auto">
         <div class="grid md:grid-cols-4 gap-8 mb-8">
             <!-- Company Info -->
@@ -21,34 +41,18 @@ import { Icon } from "astro-icon/components";
             <div>
                 <h3 class="font-semibold mb-4">Quick Links</h3>
                 <ul class="space-y-2 text-white/60 text-sm">
-                    <li>
-                        <a
-                            href="#home"
-                            class="hover:text-white transition-colors duration-300"
-                            >Home</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="#about"
-                            class="hover:text-white transition-colors duration-300"
-                            >About</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="#team"
-                            class="hover:text-white transition-colors duration-300"
-                            >Team</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="#contact"
-                            class="hover:text-white transition-colors duration-300"
-                            >Contact</a
-                        >
-                    </li>
+                    {
+                        quickLinks.map((link) => (
+                            <li>
+                                <a
+                                    href={link.href}
+                                    class="hover:text-white transition-colors duration-300"
+                                >
+                                    {link.name}
+                                </a>
+                            </li>
+                        ))
+                    }
                 </ul>
             </div>
 
@@ -56,34 +60,18 @@ import { Icon } from "astro-icon/components";
             <div>
                 <h3 class="font-semibold mb-4">Services</h3>
                 <ul class="space-y-2 text-white/60 text-sm">
-                    <li>
-                        <a
-                            href="#"
-                            class="hover:text-white transition-colors duration-300"
-                            >Web Design</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="#"
-                            class="hover:text-white transition-colors duration-300"
-                            >SEO Optimization</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="#"
-                            class="hover:text-white transition-colors duration-300"
-                            >Development</a
-                        >
-                    </li>
-                    <li>
-                        <a
-                            href="#"
-                            class="hover:text-white transition-colors duration-300"
-                            >Consulting</a
-                        >
-                    </li>
+                    {
+                        services.map((service) => (
+                            <li>
+                                <a
+                                    href={service.href}
+                                    class="hover:text-white transition-colors duration-300"
+                                >
+                                    {service.name}
+                                </a>
+                            </li>
+                        ))
+                    }
                 </ul>
             </div>
 
@@ -91,30 +79,18 @@ import { Icon } from "astro-icon/components";
             <div>
                 <h3 class="font-semibold mb-4">Connect With Us</h3>
                 <div class="flex gap-3 mb-4">
-                    <a
-                        href="https://twitter.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
-                    >
-                        <Icon size={20} color="white" name="mdi:twitter" />
-                    </a>
-                    <a
-                        href="https://linkedin.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
-                    >
-                        <Icon size={20} color="white" name="mdi:linkedin" />
-                    </a>
-                    <a
-                        href="https://github.com"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
-                    >
-                        <Icon size={20} color="white" name="mdi:github" />
-                    </a>
+                    {
+                        socialLinks.map((social) => (
+                            <a
+                                href={social.href}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-white/20 transition-colors duration-300"
+                            >
+                                <Icon size={20} color="white" name={social.icon} />
+                            </a>
+                        ))
+                    }
                 </div>
             </div>
         </div>

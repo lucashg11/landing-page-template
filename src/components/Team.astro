@@ -1,114 +1,134 @@
 ---
 import { Icon } from "astro-icon/components";
 
-// Define reusable certificates data
-const certificates = [
+// Team members data
+const teamMembers = [
     {
-        icon: "mdi:file-certificate-outline",
-        title: "Frontend Development",
+        name: "Lucas Gomez",
+        role: "Senior Web Developer",
+        description: "Passionate web developer with expertise in modern JavaScript frameworks and a keen eye for user experience. Committed to delivering high-quality, scalable solutions.",
+        icon: "mdi:code",
+        color: "primary",
+        social: {
+            linkedin: "https://linkedin.com/in/lucasgomez",
+            whatsapp: "https://wa.me/1234567890"
+        },
+        certificates: [
+            { icon: "mdi:language-javascript", title: "JavaScript Pro" },
+            { icon: "mdi:react", title: "React Native" },
+            { icon: "mdi:nodejs", title: "Node.js Expert" },
+            { icon: "mdi:database", title: "PostgreSQL" }
+        ]
     },
     {
-        icon: "mdi:file-certificate-outline",
-        title: "Backend Development",
-    },
-    {
-        icon: "mdi:file-certificate-outline",
-        title: "UI/UX Design",
-    },
-    {
-        icon: "mdi:file-certificate-outline",
-        title: "Full Stack Engeneering",
-    },
+        name: "Sarah Smith",
+        role: "Lead UX/UI Designer",
+        description: "Creative designer focused on crafting intuitive users interfaces. Specialist in user research, wireframing, and creating seamless digital experiences.",
+        icon: "mdi:brush",
+        color: "secondary",
+        social: {
+            linkedin: "https://linkedin.com/in/sarahsmith",
+            whatsapp: "https://wa.me/0987654321"
+        },
+        certificates: [
+            { icon: "mdi:palette", title: "UI Design Master" },
+            { icon: "mdi:vector-curve", title: "Vector Graphics" },
+            { icon: "mdi:monitor-dashboard", title: "UX Research" },
+            { icon: "mdi:responsive", title: "Mobile First" }
+        ]
+    }
 ];
+
 ---
 
-<article
-    class="w-full px-4 py-24 bg-gray-50 md:px-12 lg:flex lg:items-center lg:justify-center"
->
-    <div
-        class="w-full flex flex-col items-center justify-center gap-16 md:max-w-2xl"
-    >
-        <section class="w-full text-center">
-            <h2 class="text-3xl text-[#00808D] font-bold mb-2">
+<article class="w-full px-4 py-24 bg-gray-50 lg:px-8">
+    <div class="w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-16">
+        <section class="w-full text-center max-w-3xl">
+            <h2 class="text-3xl text-(--color-primary) font-bold mb-4 md:text-4xl">
                 Meet Our Team
             </h2>
-            <p class="text-[#1a1a1a]/60">
+            <p class="text-(--color-dark)/70 text-lg">
                 Get to know the talented professionals behind our success
             </p>
         </section>
-        <section
-            class="w-full flex flex-col items-center gap-6 border border-[#1a1a1a]/30 rounded-xl relative text-center px-8 py-16"
-        >
-            <Icon
-                class={"absolute -top-12 right-0 left-0 mx-auto"}
-                color={"#4D1780"}
-                size={100}
-                name="mdi:person-circle"
-            />
 
-            <h3 class="text-2xl text-[#4D1780] font-bold">Lucas Gomez</h3>
-            <span
-                class="bg-[#00808D]/30 text-[#00808D] px-5 py-2.5 rounded-full md:max-w-2xs text-center"
-                >Senior Web Developer</span
-            >
-            <p class="text-[#1a1a1a]/60 max-w-2xl mx-auto">
-                Passionate web developer with expertise in modern JavaScript
-                frameworks and a keen eye for user experience. Committed to
-                delivering high-quality, scalable solutions that drive business
-                growth.
-            </p>
-            <div
-                class="w-full flex flex-wrap items-center justify-center gap-4"
-            >
-                {
-                    certificates.map((cert) => (
-                        <div class="w-full md:hover:shadow-xl px-5 py-4 rounded-xl border border-[#1a1a1a]/30 flex items-center  gap-2 transition-shadow duration-300">
+        <div class="w-full grid gap-y-24 gap-x-8 md:grid-cols-2">
+            {teamMembers.map((member) => (
+                <section
+                    class="w-full flex flex-col items-center gap-6 border border-gray-200 bg-white rounded-2xl relative text-center px-8 py-12 pt-20 hover:shadow-xl transition-shadow duration-300"
+                >
+                    <div class="absolute -top-10 left-0 right-0 mx-auto w-24 h-24 bg-white rounded-full flex items-center justify-center p-1 border border-gray-100 shadow-sm">
+                        <Icon
+                            color={`var(--color-${member.color})`}
+                            size={80}
+                            name={member.icon}
+                        />
+                    </div>
+
+                    <h3 class="text-2xl font-bold" style={`color: var(--color-${member.color})`}>{member.name}</h3>
+                    <span
+                        class="px-5 py-2 rounded-full text-sm font-semibold"
+                        style={`background-color: var(--color-${member.color}-20); color: var(--color-${member.color})`}
+                    >
+                        {member.role}
+                    </span>
+                    <p class="text-(--color-dark)/70 mb-4">
+                        {member.description}
+                    </p>
+                    
+                    <div class="w-full grid grid-cols-2 gap-3 mb-6">
+                        {
+                            member.certificates.map((cert) => (
+                                <div class="px-3 py-2 rounded-lg border border-gray-100 bg-gray-50 flex items-center gap-2 hover:bg-gray-100 transition-colors duration-200">
+                                    <Icon
+                                        size={20}
+                                        color={`var(--color-${member.color})`}
+                                        name={cert.icon}
+                                    />
+                                    <p class="text-xs text-(--color-dark)/70 font-medium text-left">
+                                        {cert.title}
+                                    </p>
+                                </div>
+                            ))
+                        }
+                    </div>
+
+                    <div class="w-full flex items-center justify-center gap-4 mt-auto">
+                        <a
+                            href={member.social.linkedin}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex items-center gap-2 border border-gray-200 px-4 py-2 rounded-xl group hover:bg-[#0072B1] hover:border-[#0072B1] transition-all duration-300"
+                        >
                             <Icon
-                                size={36}
-                                color={"#4D1780"}
-                                name={cert.icon}
+                                class="group-hover:text-white transition-colors"
+                                size={20}
+                                color="#0072B1"
+                                name="mdi:linkedin"
                             />
-                            <p class="text-lg text-[#1a1a1a]/60 font-medium">
-                                {cert.title}
-                            </p>
-                        </div>
-                    ))
-                }
-            </div>
-            <div class="w-full flex items-center justify-center gap-4">
-                <a
-                    href="https://linkedin.com/in/lucasgomez"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex items-center gap-2 border border-[#1a1a1a]/30 px-4 py-2 rounded-2xl group hover:bg-[#0072B1] hover:border-[#0072B1] duration-300"
-                >
-                    <Icon
-                        class="group-hover:text-white"
-                        size={22}
-                        color={"#0072B1"}
-                        name="mdi:linkedin"
-                    />
-                    <span class="text-[#1a1a1a] group-hover:text-white"
-                        >LinkedIn</span
-                    >
-                </a>
-                <a
-                    href="https://wa.me/1234567890"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    class="flex items-center gap-2 border border-[#1a1a1a]/30 px-4 py-2 rounded-2xl group hover:bg-[#25D366] hover:border-[#25D366] duration-300"
-                >
-                    <Icon
-                        class="group-hover:text-white"
-                        size={22}
-                        color={"#25D366"}
-                        name="mdi:whatsapp"
-                    />
-                    <span class="text-[#1a1a1a] group-hover:text-white"
-                        >WhatsApp</span
-                    >
-                </a>
-            </div>
-        </section>
+                            <span class="text-(--color-dark) text-sm font-medium group-hover:text-white transition-colors"
+                                >LinkedIn</span
+                            >
+                        </a>
+                        <a
+                            href={member.social.whatsapp}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="flex items-center gap-2 border border-gray-200 px-4 py-2 rounded-xl group hover:bg-[#25D366] hover:border-[#25D366] transition-all duration-300"
+                        >
+                            <Icon
+                                class="group-hover:text-white transition-colors"
+                                size={20}
+                                color="#25D366"
+                                name="mdi:whatsapp"
+                            />
+                            <span class="text-(--color-dark) text-sm font-medium group-hover:text-white transition-colors"
+                                >WhatsApp</span
+                            >
+                        </a>
+                    </div>
+                </section>
+            ))}
+        </div>
     </div>
 </article>

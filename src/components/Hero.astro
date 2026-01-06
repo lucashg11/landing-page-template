@@ -26,34 +26,34 @@ const services = [
 ---
 
 <section
-    class="w-full bg-linear-to-b from-[#00808D] to-[#1a1a1a] pt-16 px-4 polygon flex items-center justify-end lg:h-[93dvh] lg:px-24"
+    class="w-full bg-linear-to-b from-(--color-primary) to-(--color-dark) pt-32 pb-12 px-4 polygon flex items-center justify-center lg:h-[93dvh] lg:px-8"
 >
     <div
-        class="w-full flex flex-col items-center justify-center gap-8 lg:flex-row"
+        class="w-full max-w-7xl mx-auto flex flex-col items-center justify-center gap-12 lg:flex-row lg:justify-between"
     >
-        <div class="w-full max-w-4xl text-center lg:text-left">
-            <h1 class="text-5xl font-bold text-white mb-2">
+        <div class="w-full max-w-2xl text-center lg:text-left lg:flex-1">
+            <h1 class="text-5xl font-bold text-white mb-6 lg:text-7xl">
                 Astro Landing Template
             </h1>
-            <p class="text-white/60 text-lg mb-4">
+            <p class="text-white/60 text-lg mb-8 max-w-xl mx-auto lg:mx-0">
                 Landing page example made in Astro and Tailwind CSS
             </p>
             <button
-                class="bg-[#4D1780] px-5 py-2 rounded-xl text-white font-semibold md:hover:scale-110 transition-all duration-300"
+                class="bg-(--color-secondary) px-8 py-3 rounded-xl text-white font-semibold transform md:hover:scale-110 transition-all duration-300"
                 >Learn More</button
             >
         </div>
         <div
-            class="w-full h-full flex items-center justify-between flex-wrap gap-4 md:max-w-2xl md:justify-evenly lg:flex-row lg:max-w-lg"
+            class="w-full grid grid-cols-2 gap-4 max-w-lg lg:max-w-xl lg:flex-1"
         >
             {
                 services.map((service) => (
-                    <div class="w-41.5 h-28 flex flex-col items-start justify-center border-2 border-white/30 rounded-xl p-2 bg-[#4D1780]/30 gap-1 md:w-2xs lg:w-60">
-                        <div class="flex items-start gap-2 md:flex-col md:gap-2">
-                            <Icon size={28} name={service.icon} color="white" />
-                            <h3 class="text-white text-md">{service.title}</h3>
+                    <div class="flex flex-col items-start justify-center border-2 border-white/30 rounded-xl p-6 bg-(--color-secondary)/30 gap-3 hover:bg-(--color-secondary)/50 transition-colors duration-300">
+                        <div class="flex items-start gap-3">
+                            <Icon size={32} name={service.icon} color="white" />
+                            <h3 class="text-white text-lg font-semibold">{service.title}</h3>
                         </div>
-                        <p class="text-white/60 text-xs">
+                        <p class="text-white/70 text-sm leading-relaxed">
                             {service.description}
                         </p>
                     </div>
@@ -72,11 +72,13 @@ const services = [
 
 <script>
     const scrollIndicator = document.getElementById("scroll-indicator");
-    window.addEventListener("scroll", () => {
-        if (window.scrollY > 200) {
-            scrollIndicator?.classList.add("opacity-0");
-        } else {
-            scrollIndicator?.classList.remove("opacity-0");
-        }
-    });
+    if (scrollIndicator) {
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 200) {
+                scrollIndicator.classList.add("opacity-0");
+            } else {
+                scrollIndicator.classList.remove("opacity-0");
+            }
+        });
+    }
 </script>

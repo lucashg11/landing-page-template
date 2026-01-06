@@ -2,22 +2,22 @@
 import { Icon } from "astro-icon/components";
 ---
 
-<section class="w-full px-4 py-24 md:px-12">
-    <div class="w-full max-w-4xl mx-auto">
-        <div class="text-center mb-12">
-            <h2 class="text-3xl text-[#00808D] font-bold mb-4">Get In Touch</h2>
-            <p class="text-[#1a1a1a]/60 text-lg">
+<section class="w-full px-4 py-24 bg-white lg:px-8">
+    <div class="w-full max-w-7xl mx-auto">
+        <div class="text-center mb-16 max-w-3xl mx-auto">
+            <h2 class="text-3xl text-(--color-primary) font-bold mb-4 md:text-4xl">Get In Touch</h2>
+            <p class="text-(--color-dark)/70 text-lg">
                 Ready to start your next project? We'd love to hear from you.
             </p>
         </div>
 
-        <div class="grid md:grid-cols-1 gap-8 lg:grid-cols-2">
+        <div class="grid md:grid-cols-1 gap-12 lg:grid-cols-2">
             <!-- Contact Form -->
-            <form class="space-y-4 bg-white p-6 rounded-xl shadow-lg">
+            <form class="space-y-6 bg-gray-50 p-8 rounded-2xl border border-gray-100 shadow-sm">
                 <div>
                     <label
                         for="name"
-                        class="block text-sm font-medium text-[#1a1a1a] mb-1"
+                        class="block text-sm font-medium text-(--color-dark) mb-2"
                         >Name</label
                     >
                     <input
@@ -25,14 +25,14 @@ import { Icon } from "astro-icon/components";
                         id="name"
                         name="name"
                         required
-                        class="w-full px-4 py-2 border border-[#1a1a1a]/30 rounded-lg focus:ring-2 focus:ring-[#00808D] focus:border-transparent outline-none transition-all duration-300"
+                        class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-(--color-primary) focus:border-transparent outline-none transition-all duration-300 bg-white"
                         placeholder="Your Name"
                     />
                 </div>
                 <div>
                     <label
                         for="email"
-                        class="block text-sm font-medium text-[#1a1a1a] mb-1"
+                        class="block text-sm font-medium text-(--color-dark) mb-2"
                         >Email</label
                     >
                     <input
@@ -40,14 +40,14 @@ import { Icon } from "astro-icon/components";
                         id="email"
                         name="email"
                         required
-                        class="w-full px-4 py-2 border border-[#1a1a1a]/30 rounded-lg focus:ring-2 focus:ring-[#00808D] focus:border-transparent outline-none transition-all duration-300"
+                        class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-(--color-primary) focus:border-transparent outline-none transition-all duration-300 bg-white"
                         placeholder="your@email.com"
                     />
                 </div>
                 <div>
                     <label
                         for="message"
-                        class="block text-sm font-medium text-[#1a1a1a] mb-1"
+                        class="block text-sm font-medium text-(--color-dark) mb-2"
                         >Message</label
                     >
                     <textarea
@@ -55,47 +55,53 @@ import { Icon } from "astro-icon/components";
                         name="message"
                         rows="4"
                         required
-                        class="w-full px-4 py-2 border border-[#1a1a1a]/30 rounded-lg focus:ring-2 focus:ring-[#00808D] focus:border-transparent outline-none transition-all duration-300 resize-none"
+                        class="w-full px-4 py-3 border border-gray-200 rounded-xl focus:ring-2 focus:ring-(--color-primary) focus:border-transparent outline-none transition-all duration-300 resize-none bg-white"
                         placeholder="Tell us about your project..."></textarea>
                 </div>
                 <button
                     type="submit"
-                    class="w-full bg-[#4D1780] text-white font-semibold py-3 rounded-lg hover:bg-[#5a2090] transition-colors duration-300 flex items-center justify-center gap-4"
+                    class="w-full bg-(--color-secondary) text-white font-semibold py-4 rounded-xl hover:opacity-90 transition-all duration-300 flex items-center justify-center gap-3 shadow-md hover:shadow-lg"
                 >
                     <span>Send Message</span>
                     <Icon
                         class={"-rotate-45 -translate-y-1"}
                         name="mdi:send"
-                        size={24}
-                        color="#fff"
+                        size={20}
+                        color="white"
                     />
                 </button>
             </form>
 
             <!-- Contact Info -->
-            <div class="space-y-6">
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="flex items-center gap-3 mb-3">
-                        <Icon size={24} color="#00808D" name="mdi:email" />
-                        <h3 class="font-semibold text-[#1a1a1a]">Email</h3>
+            <div class="space-y-6 flex flex-col justify-center">
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-(--color-primary)/30 transition-colors duration-300 group">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="p-3 bg-white rounded-full shadow-sm group-hover:shadow-md transition-all duration-300">
+                             <Icon size={24} color="var(--color-primary)" name="mdi:email" />
+                        </div>
+                        <h3 class="font-bold text-(--color-dark) text-xl">Email</h3>
                     </div>
-                    <p class="text-[#1a1a1a]/60">hello@astrolanding.com</p>
+                    <p class="text-(--color-dark)/70 pl-18">hello@astrolanding.com</p>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="flex items-center gap-3 mb-3">
-                        <Icon size={24} color="#00808D" name="mdi:phone" />
-                        <h3 class="font-semibold text-[#1a1a1a]">Phone</h3>
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-(--color-primary)/30 transition-colors duration-300 group">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="p-3 bg-white rounded-full shadow-sm group-hover:shadow-md transition-all duration-300">
+                            <Icon size={24} color="var(--color-primary)" name="mdi:phone" />
+                        </div>
+                        <h3 class="font-bold text-(--color-dark) text-xl">Phone</h3>
                     </div>
-                    <p class="text-[#1a1a1a]/60">+1 (555) 123-4567</p>
+                    <p class="text-(--color-dark)/70 pl-18">+1 (555) 123-4567</p>
                 </div>
 
-                <div class="bg-white p-6 rounded-xl shadow-lg">
-                    <div class="flex items-center gap-3 mb-3">
-                        <Icon size={24} color="#00808D" name="mdi:map-marker" />
-                        <h3 class="font-semibold text-[#1a1a1a]">Location</h3>
+                <div class="bg-gray-50 p-8 rounded-2xl border border-gray-100 hover:border-(--color-primary)/30 transition-colors duration-300 group">
+                    <div class="flex items-center gap-4 mb-3">
+                        <div class="p-3 bg-white rounded-full shadow-sm group-hover:shadow-md transition-all duration-300">
+                            <Icon size={24} color="var(--color-primary)" name="mdi:map-marker" />
+                        </div>
+                        <h3 class="font-bold text-(--color-dark) text-xl">Location</h3>
                     </div>
-                    <p class="text-[#1a1a1a]/60">
+                    <p class="text-(--color-dark)/70 pl-18">
                         San Francisco, CA<br />United States
                     </p>
                 </div>
@@ -109,6 +115,6 @@ import { Icon } from "astro-icon/components";
         e.preventDefault();
         // Add form submission logic here
         alert("Thank you for your message! We will get back to you soon.");
-        e.target.reset();
+        (e.target as HTMLFormElement).reset();
     });
 </script>
