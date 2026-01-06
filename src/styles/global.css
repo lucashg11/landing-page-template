@@ -1,12 +1,18 @@
 @import "tailwindcss";
 
 :root {
+  /* Base Colors */
   --color-primary: #00808D;
   --color-primary-20: #00808D20;
   --color-secondary: #4D1780;
   --color-secondary-20: #4D178020;
   --color-dark: #1a1a1a;
   --color-light: #ffffff;
+}
+
+body {
+  background-color: white;
+  color: var(--color-dark);
 }
 
 @layer components {
