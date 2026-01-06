@@ -1,0 +1,85 @@
+---
+import { Icon } from "astro-icon/components";
+
+const projects = [
+    {
+        title: "E-Commerce Platform",
+        description: "A full-featured online store with payment gateway integration, inventory management, and user dashboard.",
+        icon: "mdi:shopping",
+        tags: ["React", "Node.js", "Stripe"],
+    },
+    {
+        title: "Healthcare App",
+        description: "Mobile application for patient monitoring, appointment scheduling, and secure communication with doctors.",
+        icon: "mdi:heart-pulse",
+        tags: ["React Native", "Firebase", "HealthKit"],
+    },
+    {
+        title: "Corporate Dashboard",
+        description: "Analytics dashboard for enterprise data visualization, reporting, and real-time metrics tracking.",
+        icon: "mdi:view-dashboard",
+        tags: ["Vue.js", "D3.js", "AWS"],
+    },
+    {
+        title: "SaaS Landing Page",
+        description: "High-conversion landing page for a SaaS product with pricing tables, testimonials, and lead generation forms.",
+        icon: "mdi:rocket-launch",
+        tags: ["Astro", "Tailwind", "Vercel"],
+    },
+];
+---
+
+<section id="portfolio" class="w-full px-4 py-24 bg-white lg:px-8">
+    <div class="w-full max-w-7xl mx-auto flex flex-col gap-16">
+        <section class="reveal w-full text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl text-(--color-primary) font-bold mb-4 md:text-4xl">
+                Our Work
+            </h2>
+            <p class="text-(--color-dark)/70 text-lg">
+                Explore some of our recent projects and see how we help businesses grow.
+            </p>
+        </section>
+
+        <div class="reveal w-full grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            {
+                projects.map((project) => (
+                    <article class="group relative flex flex-col gap-4 rounded-2xl border border-gray-100 bg-gray-50 p-8 transition-all duration-300 hover:-translate-y-1 hover:shadow-xl hover:border-(--color-primary)/30">
+                        <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-2xl bg-white shadow-sm transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3">
+                            <Icon
+                                name={project.icon}
+                                size={32}
+                                class="text-(--color-primary)"
+                            />
+                        </div>
+
+                        <h3 class="text-xl font-bold text-(--color-dark)">
+                            {project.title}
+                        </h3>
+
+                        <p class="flex-1 text-(--color-dark)/70 leading-relaxed">
+                            {project.description}
+                        </p>
+
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            {project.tags.map((tag) => (
+                                <span class="rounded-full bg-white px-3 py-1 text-xs font-medium text-(--color-secondary) border border-gray-100">
+                                    {tag}
+                                </span>
+                            ))}
+                        </div>
+                    </article>
+                ))
+            }
+        </div>
+
+        <div class="reveal w-full flex justify-center mt-8">
+            <a
+                href="#contact"
+                class="flex items-center gap-2 rounded-xl bg-(--color-primary) px-8 py-4 font-bold text-white shadow-lg transition-transform duration-300 hover:scale-105 hover:bg-(--color-secondary)"
+            >
+                <span>Ready to build yours? Hire Us</span>
+                <Icon name="mdi:arrow-right" size={20} />
+            </a>
+        </div>
+    </div>
+</section>

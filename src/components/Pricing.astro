@@ -1,0 +1,84 @@
+---
+import { Icon } from "astro-icon/components";
+
+const plans = [
+    {
+        name: "Basic",
+        price: "$499",
+        description: "Perfect for small businesses starting their online journey.",
+        features: ["Landing Page Design", "Responsive Layout", "SEO Basics", "Contact Form"],
+        buttonProps: { class: "bg-gray-100 text-(--color-dark) hover:bg-gray-200" },
+        recommended: false
+    },
+    {
+        name: "Standard",
+        price: "$999",
+        description: "Complete solution for businesses growing their presence.",
+        features: ["Multi-page Website", "Advanced SEO", "CMS Integration", "Google Analytics", "1 Month Support"],
+        buttonProps: { class: "bg-(--color-primary) text-white hover:opacity-90" },
+        recommended: true
+    },
+    {
+        name: "Premium",
+        price: "$1999",
+        description: "Full-scale custom development for enterprise needs.",
+        features: ["Custom Web App", "E-commerce Functionality", "User Authentication", "Priority Support", "Performance Optimization"],
+        buttonProps: { class: "bg-(--color-secondary) text-white hover:opacity-90" },
+        recommended: false
+    }
+];
+---
+
+<section id="pricing" class="w-full px-4 py-24 bg-gray-50 lg:px-8">
+    <div class="w-full max-w-7xl mx-auto flex flex-col gap-16">
+        <section class="reveal w-full text-center max-w-3xl mx-auto">
+            <h2 class="text-3xl text-(--color-primary) font-bold mb-4 md:text-4xl">
+                Simple Pricing
+            </h2>
+            <p class="text-(--color-dark)/70 text-lg">
+                Transparent packages tailored to your specific needs. No hidden fees.
+            </p>
+        </section>
+
+        <div class="reveal w-full grid gap-8 md:grid-cols-3">
+            {
+                plans.map((plan) => (
+                    <div class={`relative flex flex-col p-8 rounded-2xl bg-white border transition-all duration-300 h-full shadow-xl ${plan.recommended ? 'border-(--color-primary) shadow-lg' : 'border-gray-200 shadow-sm'}`}>
+                        {plan.recommended && (
+                            <div class="absolute -top-4 left-0 right-0 mx-auto w-fit bg-(--color-primary) text-white px-4 py-1 rounded-full text-sm font-bold uppercase tracking-wide">
+                                Recommended
+                            </div>
+                        )}
+                        
+                        <div class="text-center mb-6">
+                            <h3 class="text-lg font-bold text-(--color-dark)/70 mb-2">{plan.name}</h3>
+                            <div class="flex items-baseline justify-center gap-1">
+                                <span class="text-4xl font-bold text-(--color-dark)">{plan.price}</span>
+                                <span class="text-sm text-gray-500">/project</span>
+                            </div>
+                            <p class="text-sm text-gray-500 mt-4 h-10">{plan.description}</p>
+                        </div>
+
+                        <ul class="space-y-4 mb-8 flex-1">
+                            {plan.features.map((feature) => (
+                                <li class="flex items-center gap-3 text-sm text-(--color-dark)">
+                                    <div class="shrink-0 w-5 h-5 rounded-full bg-(--color-primary)/10 flex items-center justify-center">
+                                        <Icon name="mdi:check" class="text-(--color-primary)" size={14} />
+                                    </div>
+                                    {feature}
+                                </li>
+                            ))}
+                        </ul>
+
+                        <a
+                            href="#contact"
+                            class={`w-full py-3 px-6 rounded-xl font-bold text-center transition-colors duration-300 ${plan.buttonProps.class}`}
+                        >
+                            Get Started
+                        </a>
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>

@@ -73,8 +73,9 @@ const services = [
 <script>
     const scrollIndicator = document.getElementById("scroll-indicator");
     if (scrollIndicator) {
+
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 200) {
+            if (window.scrollY > 800) {
                 scrollIndicator.classList.add("opacity-0");
             } else {
                 scrollIndicator.classList.remove("opacity-0");
